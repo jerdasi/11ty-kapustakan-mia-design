@@ -1,0 +1,33 @@
+---
+layout: layout/base.njk
+pagination:
+    data: gamelan
+    size: 1
+    alias: gamelanItem
+    addAllPagesToCollections: true
+permalink: "gallery/gamelan/items/{{ gamelanItem.nama | slugify }}/"
+tags: koleksigamelan
+templateEngineOverride: md, njk
+eleventyComputed: 
+    title: "{{ gamelanItem.nama }}"
+    url: "{{ gamelanItem.url }}"
+    nama: "{{ gamelanItem.nama }}"
+---
+{% include "partials/navbar-logo.njk" %}
+<main class="grow flex flex-col-reverse md:flex-row px-0 md:px-20 md:gap-8 pb-8 md:pb-0">
+    <div class="description-item w-full flex flex-col justify-center px-8 md:py-12">
+        <h1 class="text-4xl md:text-6xl font-bold item-title mt-4 md:mt-0 mb-4 md:mb-8 md:leading-[4rem]">{{ gamelanItem.nama }}</h1>
+        <p class="item-description text-justify text-lg md:text-2xl md:leading-9 mb-4 md:mb-8">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio atque modi dolorum eius odio obcaecati animi nam natus velit perspiciatis reiciendis totam aut eos itaque beatae deserunt, aliquam at nemo.
+        </p>
+        <div class="grow my-4 md:my-0 cursor-pointer">
+            <img src="/assets/icon/pdf.svg" alt="pdf-icon" title="Download Dokumen">
+        </div>
+        <button class="w-1/2 h-fit bg-[#184D47] text-white text-md md:text-xl py-2 tracking-widest">
+            <a href="./details">LIHAT KOLEKSI</a>
+        </button>
+    </div>
+    <div class="picture-item w-full">
+        <img src="{{ gamelanItem.url }}" alt="item-picture" class="w-full md:w-[70%] h-full object-cover">
+    </div>
+</main>

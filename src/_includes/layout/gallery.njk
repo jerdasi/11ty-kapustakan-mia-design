@@ -1,0 +1,11 @@
+---
+layout: layout/base.njk
+title: Gallery Kapustakan
+---
+<div class="h-screen flex flex-col relative">
+    {% include "partials/navbar.njk" %}
+    {{ content | safe }}
+</div>
+
+
+{% include "partials/masonry.njk" %}

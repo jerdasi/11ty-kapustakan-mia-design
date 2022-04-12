@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap');
+body {
+    font-family: 'Lora', serif;
+    background-color: #F8F8F8;
+}
+
+footer ul li {
+    border: 1px solid #D7A84C;
+    cursor: pointer;
+}
+
+footer ul li:hover {
+    background-color: #D7A84C;
+}
+
+footer ul li.active {
+    background-color: #D7A84C;
+    cursor: not-allowed;
+}
+
+
+/* Loader */
+
+.loader {
+    -webkit-animation: spinner 1.5s linear infinite;
+    animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Placeholder */
+
+.search-bar::-webkit-input-placeholder {
+    /* Edge */
+    letter-spacing: 0.05em;
+}
+
+.search-bar:-ms-input-placeholder {
+    /* Internet Explorer */
+    letter-spacing: 0.05em;
+}
+
+.search-bar::placeholder {
+    letter-spacing: 0.05em;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #F4F1D2;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0F2A12;
+    border-radius: 100vh;
+    border: 3px solid #f6f7ed;
+}

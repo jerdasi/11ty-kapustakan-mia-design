@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/select-mia-style.css">
+    <link rel="stylesheet" href="/assets/css/accordion-mia-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'emas-keraton': '#D6A82E',
+                        'hijau-keraton': '#0F2A12',
+                    },
+                    boxShadow: {
+                        'mia-style': '0px 0px 29px 10px #D7A84C'
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities { 
+        .column-5{ width: 18.4%; margin-bottom: 2% } 
+        .column-4{ width: 22%; margin-bottom: 3%; } 
+        .column-3{ width: 31.33%; margin-bottom: 2%; } 
+        .column-2{ width: 47.5%; margin-bottom: 6%; } 
+        .column-1{ width: 100%; margin-bottom: 8%; } 
+        .picture-style{
+            width: theme('width.full'); 
+            height: theme('height.auto'); 
+            object-fit: cover; 
+            border-radius: theme('borderRadius.lg'); 
+            border-width: theme('borderWidth.4'); 
+            border-color: theme('colors.emas-keraton'); 
+            cursor: pointer; 
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+        transition-duration: 100ms; } }
+    </style>
+</head>
+
+<body>
+    {{ content | safe }}
+</body>
+{# <script type="module">
+    import * as data from '/src/_data/gamelan.json'
+    console.log(data)
+</script> #}
+<script>
+    {% for i in range(0, 10)%}
+        console.log({{i}})
+    {% endfor %}
+
+</script>
+</html>

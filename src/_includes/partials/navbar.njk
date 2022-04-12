@@ -1,0 +1,44 @@
+<header class="w-full">
+    <nav class="h-16 flex justify-between items-center mx-4 lg:mx-8 gap-4">
+        <!-- Back Navigation -->
+        <div class="w-full md:w-fit flex justify-between items-center">
+            <i class="fa-solid fa-arrow-left text-2xl cursor-pointer"></i>
+            <div class="cursor-pointer text-center block md:hidden">
+                <img src="/assets/img/logo-keraton.png" alt="logo-keraton" class="w-12 h-12 mx-auto">
+                <h1 class="font-bold tracking-widest">KAPUSTAKAN.</h1>
+            </div>
+            <span class="text-3xl cursor-pointer block md:hidden open-nav">
+                <i id="menu" class="fa fa-bars"></i>
+            </span>
+        </div>
+        <div class="hidden md:flex md:gap-4 grow md:grow-0 justify-between md:justify-start ">
+            <div class="w-1/2 md:w-80 flex border-b border-hijau-keraton items-center m-2 px-2">
+                <input type="text" class="w-full bg-transparent shadow-none outline-none border-none text-hijau-keraton search-bar" placeholder="Apa Cari Kak?">
+                <i class="fa-solid fa-magnifying-glass text-hijau-keraton text-xl"></i>
+            </div>
+
+            <!-- Select Box -->
+            <div class="grow select_wrap md:w-80 h-full relative border">
+                <ul class="default_option bg-hijau-keraton relative cursor-pointer text-white">
+                    <li class="p-2">
+                        <div class="default_option">
+                            <p class="tracking-widest w-[90%] md:w-auto">semua gamelan</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <ul class="select_ul absolute left-0 top-10 border w-full hidden z-40 bg-white">
+                    {% set option = ["semua gamelan", "hageng", "pakurmatan"]%}
+                    {% for item in option %}
+                        <li class="p-2 hover:bg-hijau-keraton hover:text-white cursor-pointer">
+                            <div class="option {{ "all" if item == "semua gamelan" else item }}">
+                                <p class="tracking-widest">{{ item }}</p>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- End Select Box -->
+        </div>
+    </nav>
+</header>

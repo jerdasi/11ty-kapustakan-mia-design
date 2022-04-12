@@ -1,0 +1,30 @@
+{
+    "name": "11ty-kapustakan-mia-design",
+    "version": "1.0.0",
+    "description": "Masih Nyoba Kapustaka Design dengan 11ty",
+    "main": "index.js",
+    "scripts": {
+        "clean": "npx rimraf public",
+        "start": "npm run clean & npx eleventy --serve",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jerdasi/11ty-kapustakan-mia-design.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jerdasi/11ty-kapustakan-mia-design/issues"
+    },
+    "homepage": "https://github.com/jerdasi/11ty-kapustakan-mia-design#readme",
+    "devDependencies": {
+        "@11ty/eleventy": "^1.0.0"
+    },
+    "dependencies": {
+        "@11ty/eleventy-upgrade-help": "^1.0.1",
+        "@sindresorhus/slugify": "^2.1.0",
+        "rimraf": "^3.0.2"
+    }
+}

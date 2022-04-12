@@ -1,0 +1,21 @@
+.select_wrap .default_option:before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid;
+    border-color: transparent transparent #fff #fff;
+    transform: rotate(-45deg);
+}
+
+.select_wrap.active .select_ul {
+    display: block;
+}
+
+.select_wrap.active .default_option:before {
+    top: 10px;
+    right: 12px;
+    transform: rotate(-225deg);
+}

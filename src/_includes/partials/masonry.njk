@@ -1,0 +1,30 @@
+<script src="/assets/libs/masonry.pkgd.min.js"></script>
+<script src="/assets/js/select-box.js"></script>
+<script>
+    const initializeHover = () => {
+        document.querySelectorAll('.grid-item').forEach(elemen => {
+
+            let description = elemen.firstElementChild
+            elemen.addEventListener('mouseenter', () => {
+                description.classList.add('md:border-0', 'md:border-emas-keraton')
+                description.classList.add('md:shadow-mia-style')
+                elemen.classList.add('md:scale-110')
+                elemen.lastElementChild.classList.remove('md:hidden')
+            })
+            elemen.addEventListener('mouseleave', () => {
+                description.classList.remove('md:border-0', 'md:border-emas-keraton')
+                description.classList.remove('md:shadow-mia-style')
+                elemen.classList.remove('md:scale-110')
+                elemen.lastElementChild.classList.add('md:hidden')
+            })
+        })
+    }
+    let grid = document.querySelector(".grid")
+    var msnry = new Masonry(grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        gutter: '.gutter-sizer',
+        percentPosition: true
+    })
+    initializeHover()
+</script>

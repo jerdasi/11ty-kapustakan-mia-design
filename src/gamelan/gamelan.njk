@@ -1,0 +1,40 @@
+--- 
+layout: layout/gallery.njk 
+title: Kapustakan 
+pagination: 
+    data: gamelan
+    size: 10
+    alias: gamelanItem
+permalink: gallery/gamelan{% if pagination.pageNumber > 0 %}/page{{ pagination.pageNumber + 1}}{% endif %}/index.html
+--- 
+<main class="grow w-full px-4 lg:px-8 overflow-y-scroll">
+    <div class="grid w-full py-12 gallery-container px-12">
+    <div class="grid-sizer column-1 sm:column-2 md:column-3 lg:column-4"></div>
+    <div class="gutter-sizer w-[0%] sm:w-[10%] md:w-[5%] lg:w-[4%]"></div>
+        {% for item in gamelanItem %}
+            <div class="grid-item relative column-1 sm:column-2 md:column-3 lg:column-4 hover:md:z-50 {{ item.jenis }}">
+                <img src={{ item.url }} alt="gallery-item" class="picture-style">
+                <div class="item-description absolute w-full bottom-0 block md:hidden">
+                    <div class="bg-emas-keraton text-white font-bold h-full p-2 rounded-b-lg">
+                        <a href="./items/{{ item.nama | slugify }}"><h1 class="text-lg tracking-widest text-center cursor-pointer">{{ item.nama | upper }}</h1></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+<footer class="w-full absolute bottom-5 bg-transparent flex justify-center pagination-contaner">
+    <ul class="flex bg-white shadow">
+        <li class="px-3 py-2 bg-keraton border border-emas-keraton 
+        {{"hover:bg-emas-keraton" if pagination.href.previous}} {{"cursor-not-allowed" if not pagination.href.previous}}">
+            <a href="{{pagination.href.previous}}"><i class="fa-solid fa-angle-left {{"cursor-not-allowed" if not pagination.href.previous}}"></i></a>
+        </li>
+        {% for pageEntry in pagination.pages %}
+            <li class="px-3 py-2 bg-keraton border border-emas-keraton hover:bg-emas-keraton {{"bg-emas-keraton" if loop.index == pagination.pageNumber + 1 }}"><a href="{{pagination.hrefs[loop.index0]}}">{{ loop.index }}</a></li>
+        {% endfor %}
+        <li class="px-3 py-2 bg-keraton border border-emas-keraton 
+        {{"hover:bg-emas-keraton" if pagination.href.next}} {{"cursor-not-allowed" if not pagination.href.next}}">
+            <a href="{{pagination.href.next}}"><i class="fa-solid fa-angle-right {{"cursor-not-allowed" if not pagination.href.next}}"></i></a>
+        </li>
+    </ul>
+</footer>
